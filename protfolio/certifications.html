@@ -1,205 +1,497 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Certifications and Badges obtained by Hitesh Gottapu.">
+  <meta name="keywords" content="data analysis, session analytics, certifications, badges">
+  <meta name="author" content="Hitesh Gottapu">
+  <title>Certifications and Badges by Hitesh Gottapu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-  
-    .navbar {
-      background-color: #343a40;
+    /* CSS Variables */
+    :root {
+      --primary-color: #343a40;
+      --secondary-color: #EF6C00;
+      --highlight-color: #FFD700;
+      --background-color: #f4f4f9;
+      --card-background: #ffffff;
+      --font-color: #333;
+      --border-radius: 10px;
+      --transition-speed: 0.3s;
+      --font-family: 'Poppins', sans-serif;
+      --card-height: 350px; /* Fixed card height */
+      --card-width: 250px; /* Fixed card width */
     }
 
-    .navbar-brand, .nav-link {
-      color: #ffffff !important;
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family);
+      background-color: var(--background-color);
+      color: var(--font-color);
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
       font-weight: 600;
     }
 
-    .navbar-nav .nav-link:hover {
-      color: #ffd700 !important;
+    p {
+      margin: 0 0 15px;
+      line-height: 1.6;
     }
 
-    .paragraph {
-      text-align: justify;
+    /* Navbar */
+    nav {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .navbar-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      position: relative;
+      transition: color var(--transition-speed);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--highlight-color);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--highlight-color);
+      transition: width var(--transition-speed);
+    }
+
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Section Container */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 100px;
+      height: 4px;
+      background-color: var(--secondary-color);
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      border-radius: var(--border-radius);
+    }
+
+    /* Card Styles */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .col {
+      flex: 1 1 var(--card-width);
+      display: flex;
+      justify-content: center; /* Center the cards horizontally */
+      align-items: stretch; /* Stretch cards to align equally */
+    }
+
+    .card {
+      background-color: var(--card-background);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      width: var(--card-width); /* Set fixed width */
+      height: var(--card-height); /* Set fixed height */
+      text-align: center; /* Center the text */
     }
 
     .card:hover {
-      transform: scale(1.05);
-      transition: transform 0.3s;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px; /* Fixed image height */
+      object-fit: cover; /* Ensure image is contained within the card */
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+      flex-grow: 1; /* Allow title to grow if necessary */
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      background-color: var(--secondary-color);
+      border: none;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+      margin-top: 10px; /* Spacing between elements */
+    }
+
+    .btn:hover {
+      background-color: var(--highlight-color);
+      transform: translateY(-2px);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Darker background for emphasis */
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      animation: fadeInBackground var(--transition-speed) ease-in-out;
+    }
+
+    .modal-content {
+      background-color: var(--card-background);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      width: 80%;
+      max-width: 600px;
+      position: relative;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeIn var(--transition-speed) ease-in-out;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--border-radius);
+    }
+
+    .modal-content h5 {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .modal-content p {
+      font-size: 1rem;
+      color: var(--font-color);
+      margin: 15px 0;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: var(--secondary-color);
+      color: #ffffff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 8px 12px;
+      transition: background-color var(--transition-speed);
+    }
+
+    .modal-close:hover {
+      background-color: var(--highlight-color);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInBackground {
+      from { background-color: rgba(0, 0, 0, 0); }
+      to { background-color: rgba(0, 0, 0, 0.8); }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .col {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+
+      .modal-content {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .col {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
     }
   </style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Certifications obtained by Hitesh Gottapu.">
-  <meta name="keywords" content="data analysis, session analytics, certifications">
-  <meta name="author" content="Hitesh Gottapu">
-  <title>Certifications by Hitesh Gottapu</title>
-  <!-- Updated Bootstrap CDN link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Hitesh Gottapu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          
-          <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+  <nav>
+    <a class="navbar-brand" href="index.html">Hitesh Gottapu</a>
+    <div class="navbar-nav">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="projects.html">Projects</a>
+      <a class="nav-link active" href="certifications.html">Certifications</a>
+      <a class="nav-link" href="contact.html">Contact</a>
     </div>
   </nav>
 
   <!-- Certifications Section -->
-  <div class="container mt-5">
+  <div class="container">
     <section class="certifications-section">
-      <h2 class="section-title text-center">Certifications</h2>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center">
-        <!-- Certification Cards -->
-        <!-- Certification Card Template -->
-        <script>
-          const certifications = [
-            {
-              title: "Data Analytics and Visualization Job Simulation",
-              img: "certificate1.png",
-              link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture North America/hzmoNKtzvAzXsEqx8_Accenture North America_7vX6Px4HnMxrf2tnu_1714907075517_completion_certificate.pdf"
-            },
-            {
-              title: "Analyzing and Visualizing Data with Power BI",
-              img: "certificate2.png",
-              link: "https://courses.edx.org/certificates/fe65f867c5654d3d8959be8861c4c9bc",
-              
-            },
-            {
-              title: "Python Bootstrap",
-              img: "certificate3.png",
-              link: "https://udemy-certificate.s3.amazonaws.com/image/UC-bafcbd9c-bf6d-4eb2-a78a-92dd3298d41f.jpg?v=1679466952000"
-            },
-            {
-              title: "Machine Learning with Python",
-              img: "certificate4.png",
-              link: "https://trainings.internshala.com/view_certificate/2lkdb3dfpnz/ijvb8cu86tv/"
-            },
-            {
-              title: "MS-Excel",
-              img: "certificate5.png",
-              link: "https://trainings.internshala.com/view_certificate/7oyhulm6qt3/baputm8muul/"
-            },
-            {
-              title: "SQL",
-              img: "certificate6.png",
-              link: "https://trainings.internshala.com/view_certificate/izk82pbys5b/it0p2sxtw2u/"
-            },
-            {
-              title: "Tableau",
-              img: "certificate7.png",
-              link: "https://trainings.internshala.com/s/v/3215596/58a96835"
-            },
-            {
-              title: "AVISKHAR Student Expo 2024",
-              img: "avishkar.png",
-              link: "https://drive.google.com/file/d/1NeNgseGhK8RRIKR0KI-A_CcTdFPE9ahs/view?usp=sharing"
-            }
-          ];
-
-          document.addEventListener('DOMContentLoaded', () => {
-            const certContainer = document.querySelector('.certifications-section .row');
-            certifications.forEach(cert => {
-              const certCard = document.createElement('div');
-              certCard.className = 'col mb-4';
-              certCard.innerHTML = `
-                <div class="card h-100 text-center skill-card">
-                  <img src="${cert.img}" class="card-img-top" alt="${cert.title}">
-                  <div class="card-body">
-                    <h5 class="card-title">${cert.title}</h5>
-                    ${cert.modal ? 
-                      `<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#certificateModal-${cert.title.replace(/\s/g, '')}">View Certificate</button>` :
-                      `<a href="${cert.link}" class="btn btn-primary" target="_blank">View Certificate</a>`}
-                  </div>
-                </div>
-                ${cert.modal ? 
-                  `<div class="modal fade" id="certificateModal-${cert.title.replace(/\s/g, '')}" tabindex="-1" aria-labelledby="certificateModalLabel-${cert.title.replace(/\s/g, '')}" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="certificateModalLabel-${cert.title.replace(/\s/g, '')}">${cert.title}</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <p>Description of ${cert.title}.</p>
-                          <img src="${cert.img}" class="img-fluid" alt="${cert.title}">
-                          <a href="${cert.link}" class="btn btn-primary mt-3" target="_blank">View Certificate</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>` : ''}
-              `;
-              certContainer.appendChild(certCard);
-            });
-          });
-        </script>
+      <h2 class="section-title">Certifications</h2>
+      <div class="row">
+        <!-- Certification Cards will be inserted here -->
       </div>
     </section>
   </div>
 
   <!-- Badges Section -->
-  <div class="container mt-5">
+  <div class="container">
     <section class="badges-section">
-      <h2 class="section-title text-center">Badges</h2>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center">
-        <!-- Badge Cards -->
-        <!-- Badge Card Template -->
-        <script>
-          const badges = [
-            {
-              title: "Data Analysis Essentials",
-              img: "data-analytics-essentials.png",
-              link: "https://www.credly.com/badges/c15b41cf-9841-422c-8b12-47a58b7d0946/public_url"
-            },
-            {
-              title: "Data Analysis Using Python",
-              img: "data-analysis-using-python.png",
-              link: "https://www.credly.com/badges/e4ffef3f-494f-4754-93ee-cb3fefb7c966/public_url"
-            },
-            {
-              title: "Python Hacker Ranker",
-              img: "python.png",
-              link: "https://www.hackerrank.com/hiteshgottapu?badge=sql&stars=5&level=3&utm_campaign=social-buttons&utm_medium=twitter&utm_source=badge_share_profile&social=linkedin "
-            },
-            {
-              title: "SQL Hacker Ranker",
-              img: "SQL-BADGE.png",
-              link: "https://www.hackerrank.com/hiteshgottapu?badge=sql&stars=5&level=3&utm_campaign=social-buttons&utm_medium=twitter&utm_source=badge_share_profile&social=linkedin "
-            }
-          ];
-
-          document.addEventListener('DOMContentLoaded', () => {
-            const badgeContainer = document.querySelector('.badges-section .row');
-            badges.forEach(badge => {
-              const badgeCard = document.createElement('div');
-              badgeCard.className = 'col mb-4';
-              badgeCard.innerHTML = `
-                <div class="card h-100 text-center skill-card">
-                  <img src="${badge.img}" class="card-img-top" alt="${badge.title}">
-                  <div class="card-body">
-                    <h5 class="card-title">${badge.title}</h5>
-                    <a href="${badge.link}" class="btn btn-primary" target="_blank">View Badge</a>
-                  </div>
-                </div>
-              `;
-              badgeContainer.appendChild(badgeCard);
-            });
-          });
-        </script>
+      <h2 class="section-title">Badges</h2>
+      <div class="row">
+        <!-- Badge Cards will be inserted here -->
       </div>
     </section>
   </div>
 
-  <!-- Bootstrap JS and any other scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Modal Template -->
+  <div id="certificateModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h5>Certificate Title</h5>
+      <img src="" alt="Certificate Image">
+      <p>Description of the certificate.</p>
+      <a href="#" class="btn" target="_blank">View Certificate</a>
+    </div>
+  </div>
+
+  <!-- Script to Insert Certification Cards and Badges -->
+  <script>
+    // Certificates Data
+    const certifications = [
+      {
+        title: "Data Analytics and Visualization Job Simulation",
+        img: "certificate1.png",
+        link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture North America/hzmoNKtzvAzXsEqx8_Accenture North America_7vX6Px4HnMxrf2tnu_1714907075517_completion_certificate.pdf",
+        description: "An intensive job simulation that covered data analysis and visualization tasks using various tools and methodologies."
+      },
+      {
+        title: "Analyzing and Visualizing Data with Power BI",
+        img: "certificate2.png",
+        link: "https://courses.edx.org/certificates/fe65f867c5654d3d8959be8861c4c9bc",
+        description: "This certification focuses on creating powerful data visualizations and dashboards using Power BI to derive business insights."
+      },
+      {
+        title: "Python Bootstrap",
+        img: "certificate3.png",
+        link: "https://udemy-certificate.s3.amazonaws.com/image/UC-bafcbd9c-bf6d-4eb2-a78a-92dd3298d41f.jpg?v=1679466952000",
+        description: "A comprehensive course on Python covering everything from basics to advanced concepts and building practical projects."
+      },
+      {
+        title: "Machine Learning with Python",
+        img: "certificate4.png",
+        link: "https://trainings.internshala.com/view_certificate/2lkdb3dfpnz/ijvb8cu86tv/",
+        description: "An in-depth training on machine learning algorithms and applications using Python programming language."
+      },
+      {
+        title: "MS-Excel",
+        img: "certificate5.png",
+        link: "https://trainings.internshala.com/view_certificate/7oyhulm6qt3/baputm8muul/",
+        description: "Advanced proficiency in Microsoft Excel, focusing on data analysis, reporting, and automation using formulas and VBA."
+      },
+      {
+        title: "SQL",
+        img: "certificate6.png",
+        link: "https://trainings.internshala.com/view_certificate/izk82pbys5b/it0p2sxtw2u/",
+        description: "Mastered SQL queries and database management with a focus on data manipulation and analysis for business intelligence."
+      },
+      {
+        title: "Tableau",
+        img: "certificate7.png",
+        link: "https://trainings.internshala.com/s/v/3215596/58a96835",
+        description: "Skilled in creating interactive dashboards and visualizations in Tableau to communicate data insights effectively."
+      },
+      {
+        title: "AVISKHAR Student Expo 2024",
+        img: "avishkar.png",
+        link: "https://drive.google.com/file/d/1NeNgseGhK8RRIKR0KI-A_CcTdFPE9ahs/view?usp=sharing",
+        description: "Presented a research project at the AVISKHAR Student Expo, showcasing innovative data science applications."
+      }
+    ];
+
+    // Badges Data
+    const badges = [
+      {
+        title: "Data Analysis Essentials",
+        img: "data-analytics-essentials.png",
+        link: "https://www.credly.com/badges/c15b41cf-9841-422c-8b12-47a58b7d0946/public_url",
+        description: "Essential skills in data analysis including data cleaning, visualization, and interpretation."
+      },
+      {
+        title: "Data Analysis Using Python",
+        img: "data-analysis-using-python.png",
+        link: "https://www.credly.com/badges/e4ffef3f-494f-4754-93ee-cb3fefb7c966/public_url",
+        description: "Proficiency in data analysis using Python libraries such as pandas, NumPy, and Matplotlib."
+      },
+      {
+        title: "Python Hacker Ranker",
+        img: "python.png",
+        link: "https://www.hackerrank.com/hiteshgottapu?badge=sql&stars=5&level=3&utm_campaign=social-buttons&utm_medium=twitter&utm_source=badge_share_profile&social=linkedin",
+        description: "High-level problem-solving skills using Python, validated through rigorous coding challenges."
+      },
+      {
+        title: "SQL Hacker Ranker",
+        img: "SQL-BADGE.png",
+        link: "https://www.hackerrank.com/hiteshgottapu?badge=sql&stars=5&level=3&utm_campaign=social-buttons&utm_medium=twitter&utm_source=badge_share_profile&social=linkedin",
+        description: "Advanced SQL skills validated by achieving top scores in complex SQL challenges."
+      }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Insert Certification Cards
+      const certContainer = document.querySelector('.certifications-section .row');
+      certifications.forEach(cert => {
+        const certCard = document.createElement('div');
+        certCard.className = 'col mb-4';
+        certCard.innerHTML = `
+          <div class="card" data-description="${cert.description}" data-title="${cert.title}" data-link="${cert.link}">
+            <img src="${cert.img}" class="card-img-top" alt="${cert.title}">
+            <div class="card-body">
+              <h5 class="card-title">${cert.title}</h5>
+              <button class="btn">View Details</button>
+            </div>
+          </div>
+        `;
+        certContainer.appendChild(certCard);
+      });
+
+      // Insert Badge Cards
+      const badgeContainer = document.querySelector('.badges-section .row');
+      badges.forEach(badge => {
+        const badgeCard = document.createElement('div');
+        badgeCard.className = 'col mb-4';
+        badgeCard.innerHTML = `
+          <div class="card" data-description="${badge.description}" data-title="${badge.title}" data-link="${badge.link}">
+            <img src="${badge.img}" class="card-img-top" alt="${badge.title}">
+            <div class="card-body">
+              <h5 class="card-title">${badge.title}</h5>
+              <button class="btn">View Details</button>
+            </div>
+          </div>
+        `;
+        badgeContainer.appendChild(badgeCard);
+      });
+
+      // Modal Functionality
+      const modal = document.getElementById('certificateModal');
+      const modalImg = modal.querySelector('img');
+      const modalTitle = modal.querySelector('h5');
+      const modalDesc = modal.querySelector('p');
+      const modalBtn = modal.querySelector('.btn');
+
+      document.querySelectorAll('.card .btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const card = btn.closest('.card');
+          const title = card.getAttribute('data-title');
+          const description = card.getAttribute('data-description');
+          const link = card.getAttribute('data-link');
+          const imgSrc = card.querySelector('img').getAttribute('src');
+
+          modalTitle.textContent = title;
+          modalImg.src = imgSrc;
+          modalDesc.textContent = description;
+          modalBtn.href = link;
+          modal.style.display = 'flex';
+        });
+      });
+
+      document.querySelector('.modal-close').addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

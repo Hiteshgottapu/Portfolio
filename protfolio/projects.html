@@ -7,364 +7,573 @@
   <meta name="keywords" content="data analysis, session analytics, projects">
   <meta name="author" content="Hitesh Gottapu">
   <title>Projects by Hitesh Gottapu</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    
-
-    .navbar {
-      background-color: #343a40;
+    /* CSS Variables for Consistency */
+    :root {
+      --primary-color: #343a40;
+      --secondary-color: #EF6C00;
+      --highlight-color: #FFA726;
+      --background-color: #f4f4f9;
+      --font-color: #333;
+      --nav-height: 60px;
+      --border-radius: 12px;
+      --transition-speed: 0.3s;
+      --font-family: 'Poppins', sans-serif;
     }
 
-    .navbar-brand, .nav-link {
-      color: #ffffff !important;
-      font-weight: 600;
+    /* Global Styles */
+    body {
+      font-family: var(--font-family);
+      background-color: var(--background-color);
+      color: var(--font-color);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    .navbar-nav .nav-link:hover {
-      color: #ffff0d !important;
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0 0 10px 0;
     }
 
-    .section-title {
-      color: #101011;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      text-transform: uppercase;
-    }
-    .paragraph {
-      text-align: justify;
+    p {
+      margin: 0 0 15px 0;
     }
 
-    .accordion-button {
-      background-color: #1dad1a;
+    /* Navbar Styles */
+    nav {
+      background-color: var(--primary-color);
       color: #ffffff;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .accordion-button:not(.collapsed) {
-      background-color: #ff3b00;
-    }
-
-    .accordion-body {
-      background-color: #ffffff;
-      color: #000000;
-      border: 1px solid #dee2e6;
-      border-top: 0;
-      padding: 1.5rem;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .btn-custom {
-      display: inline-flex;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      margin-right: 0.5rem;
-      margin-top: 0.5rem;
-      transition: background-color 0.3s;
+      padding: 0 20px;
+      height: var(--nav-height);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .btn-custom .icon {
-      margin-right: 0.5rem;
-    }
-
-    .btn-primary, .btn-secondary {
+    .navbar-brand {
+      font-size: 24px;
       font-weight: 600;
-      transition: transform 0.3s;
+      text-decoration: none;
+      color: #ffffff;
     }
 
-    .btn-primary:hover, .btn-secondary:hover {
-      transform: translateY(-2px);
+    .navbar-nav {
+      display: flex;
+      gap: 20px;
     }
 
-    .accordion-item {
-      border: none;
-      margin-bottom: 1rem;
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      position: relative;
+      transition: color var(--transition-speed);
     }
 
-    .accordion-item .img-fluid {
-      transition: transform 0.3s;
+    .nav-link:hover {
+      color: var(--highlight-color);
     }
 
-    .accordion-item .img-fluid:hover {
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--highlight-color);
+      transition: width var(--transition-speed);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      position: relative;
+      animation: fadeIn 1s ease-in-out;
+      letter-spacing: 1px;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 120px;
+      height: 5px;
+      background-color: var(--secondary-color);
+      position: absolute;
+      left: 50%;
+      bottom: -15px;
+      transform: translateX(-50%);
+      border-radius: var(--border-radius);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      animation: slideIn 0.5s ease-in-out;
+    }
+
+    /* Card Styles */
+    .card {
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      position: relative;
+      padding: 20px;
+      border-left: 5px solid var(--secondary-color);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      background-color: var(--primary-color);
+      padding: 20px;
+      color: #ffffff;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      cursor: pointer;
+      transition: background-color var(--transition-speed);
+    }
+
+    .card-header:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .card-header i {
+      font-size: 28px;
+      margin-right: 15px;
+    }
+
+    .card-header h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .card-body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-body img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--border-radius);
+      margin-bottom: 15px;
+      transition: transform var(--transition-speed);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body img:hover {
       transform: scale(1.05);
     }
 
+    .card-body p {
+      text-align: justify;
+      font-size: 1.1rem;
+    }
+
+    /* Button Styles */
+    .btn-custom {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 18px;
+      background-color: var(--secondary-color);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+      text-decoration: none;
+      margin-top: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-custom:hover {
+      background-color: var(--highlight-color);
+      transform: translateY(-2px);
+    }
+
+    .btn-custom .icon {
+      margin-right: 8px;
+    }
+
+    /* Modal Styles */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: var(--border-radius);
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: var(--border-radius);
+    }
+
+    .modal-content h4 {
+      margin-top: 20px;
+      font-size: 1.8rem;
+      color: var(--primary-color);
+    }
+
+    .modal-content p {
+      margin-top: 15px;
+      color: var(--font-color);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: var(--secondary-color);
+      color: #ffffff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 8px 12px;
+      transition: background-color var(--transition-speed);
+    }
+
+    .modal-close:hover {
+      background-color: var(--highlight-color);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      text-align: center;
+      padding: 30px;
+      margin-top: 40px;
+      border-top: 5px solid var(--secondary-color);
+    }
+
+    footer .footer-link {
+      color: #ffffff;
+      margin: 0 10px;
+      text-decoration: none;
+      transition: color var(--transition-speed);
+    }
+
+    footer .footer-link:hover {
+      color: var(--highlight-color);
+    }
+
+    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
-    @keyframes fadeOut {
-      from { opacity: 1; }
-      to { opacity: 0; }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
-    .modal.fade .modal-dialog {
-      animation-name: fadeOut;
-      animation-duration: 0.3s;
-    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+      }
 
-    .modal.fade.show .modal-dialog {
-      animation-name: fadeIn;
-      animation-duration: 0.3s;
+      .card-header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .card-header i {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .card-body {
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Hitesh Gottapu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="https://wordpress.com/posts/dataanalyst53.wordpress.com">Blog</a></li>
-              <li><a class="dropdown-item" href="https://www.linkedin.com/in/hitesh-data-analyst/">LinkedIn</a></li>
-              <li><a class="dropdown-item" href="https://twitter.com/hitesh_gottapu">Twitter</a></li>
-              <li><a class="dropdown-item" href="https://www.facebook.com/hitesh.gottapu">Facebook</a></li>
-              <li><hr class="dropdown-divider"></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="navbar-brand">Hitesh Gottapu</a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="certifications.html" class="nav-link">Certifications</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </nav>
-  
-  <div class="container my-5">
-    <h2 class="text-center section-title">Projects</h2>
-    <div class="accordion" id="projectsAccordion">
-        <div class="accordion-item mb-3">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Titanic Survival Prediction Model
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#projectsAccordion">
-                <div class="accordion-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="header.png" class="img-fluid rounded" alt="Project 1">
-                        </div>
-                        <div class="col-md-8">
-                            <p class="paragraph">This project involves the development of predictive models to predict survival on the Titanic. It includes thorough data exploration, preprocessing, and training of Random Forest and Gradient Boosting classifiers. The process also involves fine-tuning of hyperparameters, with the final predictions saved as CSV files.</p>
-                            <a href="https://github.com/Hiteshgottapu/data_science/blob/AIDS/Titanic_Survival_Prediction_Model_Updated/" class="btn btn-secondary btn-custom" data-bs-toggle="tooltip" title="View the source code on GitHub">
-                                <span class="icon bi bi-github"></span>Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="accordion-item mb-3">
-            <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    The Impact of Weather Data on Stock Market Analysis
-                </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#projectsAccordion">
-                <div class="accordion-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="images.png" class="img-fluid rounded" alt="Project 2">
-                        </div>
-                        <div class="col-md-8">
-                            <p class="paragraph">This project analyzes the effect of weather data on stock market performance. It involves data collection, preprocessing, and analysis to uncover patterns and insights related to weather conditions and stock market trends.</p>
-                            <a href="https://github.com/Hiteshgottapu/data_science/tree/AIDS/stock%20market%20using%20weather%20data" class="btn btn-secondary btn-custom" data-bs-toggle="tooltip" title="View the source code on GitHub">
-                                <span class="icon bi bi-github"></span>Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion-item mb-3">
-            <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Agile Code Quality Assessment Tool
-                </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#projectsAccordion">
-                <div class="accordion-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="project3.png" class="img-fluid rounded" alt="Project 3">
-                        </div>
-                        <div class="col-md-8">
-                            <p class="paragraph">The <b>Agile Code Quality Assessment Tool</b> automates code quality evaluation with advanced machine learning. It features a Quality Rating System and Detailed Issue Reporting for actionable insights. With adaptability to various coding standards, it's an essential tool for Agile developers seeking to optimize code quality and streamline review processes.</p>
-                            <a href="https://github.com/Hiteshgottapu/data_science/tree/AIDS/Agile%20Code%20Quality%20Assessment%20Tool" class="btn btn-secondary btn-custom" data-bs-toggle="tooltip" title="View the source code on GitHub">
-                                <span class="icon bi bi-github"></span>Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion-item mb-3">
-            <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Term Deposit
-                </button>
-            </h2>
-            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#projectsAccordion">
-                <div class="accordion-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="project4.png" class="img-fluid rounded" alt="Project 4">
-                        </div>
-                        <div class="col-md-8">
-                            <p class="paragraph">Embark on a data-driven journey to predict term deposit subscriptions with our comprehensive notebook. Explore dataset nuances and decode variable contributions for informed decision-making. From logistic regression to decision trees, our models offer validation accuracies exceeding 90%, providing robust predictions. Seamlessly transition from development to deployment with our streamlined submission process, ensuring accurate score generation. Elevate your predictive analytics journey today and unlock hidden insights to drive success.</p>
-                            <a href="https://github.com/Hiteshgottapu/data_science/tree/AIDS/bank_loan" class="btn btn-secondary btn-custom" data-bs-toggle="tooltip" title="View the source code on GitHub">
-                                <span class="icon bi bi-github"></span>Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion-item mb-3">
-          <h3 class="accordion-header" id="headingFive">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  Analyzing Historical Temperature Data and Forecasting Future Trends
-              </button>
-          </h3>
-          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#projectsAccordion">
-              <div class="accordion-body">
-                  <div class="row">
-                      <div class="col-md-4">
-                          <img src="project5.png" class="img-fluid rounded" alt="Project 4">
-                      </div>
-                      <div class="col-md-8">
-                          <p class="paragraph">In this project, we delve into a comprehensive analysis of historical temperature data spanning over a century in India. Through data preprocessing techniques, including melting and datetime formatting, we prepare the dataset for in-depth exploration. Utilizing Plotly for visualization, we uncover intriguing insights into temperature fluctuations over time, identifying seasonal patterns and long-term trends. Leveraging machine learning with Decision Tree Regression, we forecast temperatures for the year 2018 with high precision. Ultimately, this project offers valuable insights into past climate trends and equips stakeholders with predictive tools for anticipating future temperature variations.</p>
-                          <a href="https://github.com/Hiteshgottapu/data_science/tree/AIDS/ml-olympiad-forecasting-indias-weather%20(1)" class="btn btn-secondary btn-custom" data-bs-toggle="tooltip" title="View the source code on GitHub">
-                              <span class="icon bi bi-github"></span>Source Code
-                          </a>
-                      </div>
-                  </div>
-              </div>
-          </div>
+  <!-- Projects Section -->
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <!-- Card for each project with modals -->
+    <div class="card" data-modal="modal1">
+      <div class="card-header">
+        <i class="fas fa-chart-line"></i>
+        <h3>Titanic Survival Prediction Model</h3>
       </div>
-
-      <div class="accordion-item mb-3">
-        <h3 class="accordion-header" id="headingSix">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                MNIST Digit Recognition with Convolutional Neural Networks
-            </button>
-        </h3>
-        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#projectsAccordion">
-            <div class="accordion-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="project6.png" class="img-fluid rounded" alt="Project 4">
-                    </div>
-                    <div class="col-md-8">
-                        <p class="paragraph">In this project, we explore the MNIST dataset, consisting of hand-written digits, to develop accurate digit recognition models. Leveraging TensorFlow and Keras, we construct Convolutional Neural Networks (CNNs) with varying configurations, including different numbers of fully connected layers. Through data preprocessing and augmentation techniques, we prepare the dataset for training, validation, and testing. Visualizations such as scatter plots and 3D projections aid in understanding the dataset's structure and distribution. By training multiple CNN models and evaluating their performance metrics, including accuracy and loss, we analyze the impact of model architecture on classification accuracy. Finally, we save the best-performing model for future deployment, offering a robust solution for digit recognition tasks.</p>
-                        <a href="https://github.com/Hiteshgottapu/data_science/tree/AIDS/ml-olympiad-forecasting-indias-weather%20(1)" class="btn btn-secondary btn-custom" data-bs-toggle="tooltip" title="View the source code on GitHub">
-                            <span class="icon bi bi-github"></span>Source Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="card-body">
+        <img src="header.png" alt="Project 1">
+        <p>This project involves the development of predictive models to predict survival on the Titanic. It includes thorough data exploration, preprocessing, and training of Random Forest and Gradient Boosting classifiers. The process also involves fine-tuning of hyperparameters, with the final predictions saved as CSV files.</p>
+        <a href="https://github.com/Hiteshgottapu/data_science/blob/AIDS/Titanic_Survival_Prediction_Model_Updated/" class="btn-custom">
+          <span class="icon fas fa-code-branch"></span> Source Code
+        </a>
+      </div>
     </div>
-    <div class="accordion-item mb-3">
-      <h3 class="accordion-header" id="headingSeven">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSix">
-              Sales Market of 2020 to 2023
-          </button>
-      </h3>
-      <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#projectsAccordion">
-          <div class="accordion-body">
-              <div class="row">
-                  <div class="col-md-4">
-                      <img src="project7.png" class="img-fluid rounded" alt="Project 4">
-                  </div>
-                  <div class="col-md-8">
-                      <p class="paragraph">Financially, the store is doing reasonably well, with total revenue of $4.72 million and a healthy margin of $472,360. That's a solid performance, though there's always room for improvement.
 
-                        Looking at the top-selling products, a few stand out. The Marble Dining Table is the clear winner, bringing in over $112,600 in margin. The 7 Seater Sofa & Recliner and Bamboo Foam Couch are also strong performers, generating $80,468 and $211,788 in margin respectively. These seem to be the store's star products.
-                        
-                        The sales team also plays a crucial role, and a few reps are really shining. Roy, Ajeet leads the pack with over $33,250 in margin, followed by Sharma, Varun at $24,570 and Dube, Akanksha at $21,315. These three are clearly the top performers on the sales floor.
-                        
-                        On the logistics side, shipping costs seem to be relatively low, totaling just $600 overall. However, there are some regional differences, with the South West region accounting for the highest shipping at $10,580. Something to keep an eye on there.
-                        
-                        Diving into the sales trends, the data shows the store's best month was January 2022, when they moved 566 units. Margin and revenue have been a bit volatile, with the highest margin recorded in July 2021 at $944,720. Understanding these fluctuations could help the team plan more effectively.
-                        
-                        Finally, the analysis suggests that when the average margin decreases, it's often tied to a drop in the average item cost. So monitoring item costs closely and looking for ways to optimize them could be a avenue to protect margins.
-                        
-                        Overall, the Global Supreme Store appears to be doing well, with some clear strengths in product mix and sales talent. But there are also opportunities to dig deeper, understand the drivers behind the data, and continually improve the business. </p>
-                      <a href="https://github.com/Hiteshgottapu/powebi/blob/AIDS/Sales%20bi.pbix" class="btn btn-secondary btn-custom" data-bs-toggle="tooltip" title="View the source file on GitHub">
-                          <span></span>PPIX
-                      </a>
-                  </div>
-              </div>
-          </div>
+    <div class="card" data-modal="modal2">
+      <div class="card-header">
+        <i class="fas fa-cloud"></i>
+        <h3>The Impact of Weather Data on Stock Market Analysis</h3>
       </div>
+      <div class="card-body">
+        <img src="images.png" alt="Project 2">
+        <p>This project analyzes the effect of weather data on stock market performance. It involves data collection, preprocessing, and analysis to uncover patterns and insights related to weather conditions and stock market trends.</p>
+        <a href="https://github.com/Hiteshgottapu/data_science/tree/AIDS/stock%20market%20using%20weather%20data" class="btn-custom">
+          <span class="icon fas fa-code-branch"></span> Source Code
+        </a>
+      </div>
+    </div>
+
+    <div class="card" data-modal="modal3">
+      <div class="card-header">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Agile Code Quality Assessment Tool</h3>
+      </div>
+      <div class="card-body">
+        <img src="project3.png" alt="Project 3">
+        <p>The <b>Agile Code Quality Assessment Tool</b> automates code quality evaluation with advanced machine learning. It features a Quality Rating System and Detailed Issue Reporting for actionable insights. With adaptability to various coding standards, it's an essential tool for Agile developers seeking to optimize code quality and streamline review processes.</p>
+        <a href="https://github.com/Hiteshgottapu/data_science/tree/AIDS/Agile%20Code%20Quality%20Assessment%20Tool" class="btn-custom">
+          <span class="icon fas fa-code-branch"></span> Source Code
+        </a>
+      </div>
+    </div>
+
+    <div class="card" data-modal="modal4">
+      <div class="card-header">
+        <i class="fas fa-university"></i>
+        <h3>Term Deposit Prediction</h3>
+      </div>
+      <div class="card-body">
+        <img src="project4.png" alt="Project 4">
+        <p>Embark on a data-driven journey to predict term deposit subscriptions with our comprehensive notebook. Explore dataset nuances and decode variable contributions for informed decision-making. From logistic regression to decision trees, our models offer validation accuracies exceeding 90%, providing robust predictions.</p>
+        <a href="https://github.com/Hiteshgottapu/data_science/tree/AIDS/bank_loan" class="btn-custom">
+          <span class="icon fas fa-code-branch"></span> Source Code
+        </a>
+      </div>
+    </div>
+
+    <div class="card" data-modal="modal5">
+      <div class="card-header">
+        <i class="fas fa-temperature-high"></i>
+        <h3>Analyzing Historical Temperature Data and Forecasting Future Trends</h3>
+      </div>
+      <div class="card-body">
+        <img src="project5.png" alt="Project 5">
+        <p>In this project, we delve into a comprehensive analysis of historical temperature data spanning over a century in India. Utilizing Plotly for visualization, we uncover intriguing insights into temperature fluctuations over time, identifying seasonal patterns and long-term trends.</p>
+        <a href="https://github.com/Hiteshgottapu/data_science/tree/AIDS/ml-olympiad-forecasting-indias-weather%20(1)" class="btn-custom">
+          <span class="icon fas fa-code-branch"></span> Source Code
+        </a>
+      </div>
+    </div>
+
+    <div class="card" data-modal="modal6">
+      <div class="card-header">
+        <i class="fas fa-pencil-alt"></i>
+        <h3>MNIST Digit Recognition with Convolutional Neural Networks</h3>
+      </div>
+      <div class="card-body">
+        <img src="project6.png" alt="Project 6">
+        <p>In this project, we explore the MNIST dataset, consisting of hand-written digits, to develop accurate digit recognition models. Leveraging TensorFlow and Keras, we construct Convolutional Neural Networks (CNNs) with varying configurations, including different numbers of fully connected layers.</p>
+        <a href="https://github.com/Hiteshgottapu/data_science/tree/AIDS/ml-olympiad-forecasting-indias-weather%20(1)" class="btn-custom">
+          <span class="icon fas fa-code-branch"></span> Source Code
+        </a>
+      </div>
+    </div>
+
+    <div class="card" data-modal="modal7">
+      <div class="card-header">
+        <i class="fas fa-chart-line"></i>
+        <h3>Sales Market of 2020 to 2023</h3>
+      </div>
+      <div class="card-body">
+        <img src="project7.png" alt="Project 7">
+        <p>Financially, the store is doing reasonably well, with total revenue of $4.72 million and a healthy margin of $472,360. That's a solid performance, though there's always room for improvement.</p>
+        <a href="https://github.com/Hiteshgottapu/powebi/blob/AIDS/Sales%20bi.pbix" class="btn-custom">
+          <span class="icon fas fa-code-branch"></span> Source Code
+        </a>
+      </div>
+    </div>
+
+    <div class="card" data-modal="modal8">
+      <div class="card-header">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Churn Analysis in Telecom Customer</h3>
+      </div>
+      <div class="card-body">
+        <img src="project8.png" alt="Project 8">
+        <p>This project involved analyzing a Telco customer dataset to understand factors influencing churn. Initial exploration revealed imbalanced data, with 73% not churning. Data cleaning included handling missing values and converting categorical variables. Insights emerged from univariate and bivariate analysis, showing higher churn among month-to-month contract holders.</p>
+        <a href="https://github.com/Hiteshgottapu/powebi/blob/AIDS/Sales%20bi.pbix" class="btn-custom">
+          <span class="icon fas fa-code-branch"></span> Source Code
+        </a>
+      </div>
+    </div>
   </div>
 
-  <div class="accordion-item mb-3">
-    <h3 class="accordion-header" id="headingEight">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseSix">
-          Churn Analysis In Telecom Customer
-        </button>
-    </h3>
-    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#projectsAccordion">
-        <div class="accordion-body">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="project8.png" class="img-fluid rounded" alt="Project 4">
-                </div>
-                <div class="col-md-8">
-                    <p class="paragraph">This project involved analyzing a Telco customer dataset to understand factors influencing churn. Initial exploration revealed imbalanced data, with 73% not churning. Data cleaning included handling missing values and converting categorical variables. Insights emerged from univariate and bivariate analysis, showing higher churn among month-to-month contract holders, those without online security or tech support, and non-senior citizens. Additionally, customers with electronic check payment methods were more likely to churn. The findings suggest opportunities for targeted interventions to reduce churn and improve customer retention. The project culminated in saving the processed dataset for further analysis or modeling. </p>
-                    <a href="https://github.com/Hiteshgottapu/powebi/blob/AIDS/Sales%20bi.pbix" class="btn btn-secondary btn-custom" data-bs-toggle="tooltip" title="View the source file on GitHub">
-                        <span></span>PPIX
-                    </a>
-                </div>
-            </div>
-        </div>
+  <!-- Modals for each project -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h4>Titanic Survival Prediction Model</h4>
+      <img src="header.png" alt="Project 1">
+      <p>This project involves the development of predictive models to predict survival on the Titanic. It includes thorough data exploration, preprocessing, and training of Random Forest and Gradient Boosting classifiers. The process also involves fine-tuning of hyperparameters, with the final predictions saved as CSV files.</p>
     </div>
-</div>
+  </div>
 
-
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h4>The Impact of Weather Data on Stock Market Analysis</h4>
+      <img src="images.png" alt="Project 2">
+      <p>This project analyzes the effect of weather data on stock market performance. It involves data collection, preprocessing, and analysis to uncover patterns and insights related to weather conditions and stock market trends.</p>
     </div>
-</div>
+  </div>
 
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRB5va5J8aJYldJ3/qOcjNp4np6g+9jaZB8jLw1f6" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kaS4RB2z1f+M+m/zMbjLaqfOe2+4pDMP5e+H2n9v+PnOUum3clUg9/D/RHBx8j4c" crossorigin="anonymous"></script>
-<script>
-$(document).ready(function(){
-    $('[data-bs-toggle="tooltip"]').tooltip();
-});
-</script>
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h4>Agile Code Quality Assessment Tool</h4>
+      <img src="project3.png" alt="Project 3">
+      <p>The Agile Code Quality Assessment Tool automates code quality evaluation with advanced machine learning. It features a Quality Rating System and Detailed Issue Reporting for actionable insights. With adaptability to various coding standards, it's an essential tool for Agile developers seeking to optimize code quality and streamline review processes.</p>
+    </div>
+  </div>
 
-  <!-- JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h4>Term Deposit Prediction</h4>
+      <img src="project4.png" alt="Project 4">
+      <p>Embark on a data-driven journey to predict term deposit subscriptions with our comprehensive notebook. Explore dataset nuances and decode variable contributions for informed decision-making. From logistic regression to decision trees, our models offer validation accuracies exceeding 90%, providing robust predictions.</p>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h4>Analyzing Historical Temperature Data and Forecasting Future Trends</h4>
+      <img src="project5.png" alt="Project 5">
+      <p>In this project, we delve into a comprehensive analysis of historical temperature data spanning over a century in India. Utilizing Plotly for visualization, we uncover intriguing insights into temperature fluctuations over time, identifying seasonal patterns and long-term trends.</p>
+    </div>
+  </div>
+
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h4>MNIST Digit Recognition with Convolutional Neural Networks</h4>
+      <img src="project6.png" alt="Project 6">
+      <p>In this project, we explore the MNIST dataset, consisting of hand-written digits, to develop accurate digit recognition models. Leveraging TensorFlow and Keras, we construct Convolutional Neural Networks (CNNs) with varying configurations, including different numbers of fully connected layers.</p>
+    </div>
+  </div>
+
+  <div id="modal7" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h4>Sales Market of 2020 to 2023</h4>
+      <img src="project7.png" alt="Project 7">
+      <p>Financially, the store is doing reasonably well, with total revenue of $4.72 million and a healthy margin of $472,360. That's a solid performance, though there's always room for improvement.</p>
+    </div>
+  </div>
+
+  <div id="modal8" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h4>Churn Analysis in Telecom Customer</h4>
+      <img src="project8.png" alt="Project 8">
+      <p>This project involved analyzing a Telco customer dataset to understand factors influencing churn. Initial exploration revealed imbalanced data, with 73% not churning. Data cleaning included handling missing values and converting categorical variables. Insights emerged from univariate and bivariate analysis, showing higher churn among month-to-month contract holders.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Hitesh Gottapu. All Rights Reserved.</p>
+    <p>
+      <a href="https://linkedin.com/in/hitesh-data-analyst" class="footer-link">LinkedIn</a> |
+      <a href="https://github.com/hiteshgottapu" class="footer-link">GitHub</a> |
+      <a href="mailto:hiteshgottapu@gmail.com" class="footer-link">Email</a>
+    </p>
+  </footer>
+
+  <!-- JavaScript for Modal Functionality -->
   <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.card');
+      const modals = document.querySelectorAll('.modal');
+      const closeButtons = document.querySelectorAll('.modal-close');
 
-        document.querySelectorAll('[data-bs-toggle="modal"]').forEach(button => {
-            button.addEventListener('click', (e) => {
-                console.log('Button clicked:', e.target);
-            });
+      cards.forEach(card => {
+        card.addEventListener('click', function() {
+          const targetModal = card.getAttribute('data-modal');
+          document.getElementById(targetModal).style.display = 'flex';
         });
+      });
+
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          button.parentElement.parentElement.style.display = 'none';
+        });
+      });
+
+      window.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal')) {
+          e.target.style.display = 'none';
+        }
+      });
     });
   </script>
 </body>

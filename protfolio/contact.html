@@ -7,129 +7,296 @@
   <meta name="keywords" content="data analysis, session analytics, contact">
   <meta name="author" content="Hitesh Gottapu">
   <title>Contact Hitesh Gottapu</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
   <style>
+    /* CSS Variables for Consistency and Easy Theme Management */
+    :root {
+      --primary-color: #EF6C00;
+      --secondary-color: #FFA726;
+      --background-color: #f4f4f4;
+      --font-color: #333;
+      --form-bg-color: #ffffff;
+      --highlight-color: #343a40;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --transition-speed: 0.3s;
+      --border-radius: 10px;
+      --max-width: 1200px;
+    }
+
+    /* Global Styles */
     body {
-      background-color: #fff;
-      color: #000;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
-    .paragraph {
-      text-align: justify;
-    }
-    .navbar {
-      background-color: #343a40;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background-color);
+      color: var(--font-color);
+      line-height: 1.6;
     }
 
-    .navbar-brand, .nav-link {
-      color: #ffffff !important;
-      font-weight: 600;
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
     }
 
-    .navbar-nav .nav-link:hover {
-      color: #ffd700 !important;
+    /* Navigation Bar */
+    nav {
+      background-color: var(--highlight-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px var(--shadow-color);
+    }
+    .navbar-brand {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .navbar-nav {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      position: relative;
+    }
+    .nav-link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: var(--secondary-color);
+      transition: width var(--transition-speed);
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+    .nav-link:hover::after {
+      width: 100%;
     }
 
+    /* Hero Section */
+    .hero {
+      background-image: url('https://ioe.engin.umich.edu/wp-content/uploads/sites/7/2021/06/RESIZED_IOE-Masters_-Data-Analytics-and-Applied-Statistics.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .btn {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
+    }
+    .hero .btn:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+
+    /* Contact Section Styling */
     .contact-section {
-      padding: 60px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: var(--max-width);
+      margin: 60px auto;
+      padding: 40px;
+      background-color: var(--form-bg-color);
+      box-shadow: 0 8px 16px var(--shadow-color);
+      border-radius: var(--border-radius);
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     }
-    .section-title {
-      font-size: 36px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #000;
+    .contact-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px var(--shadow-color);
+    }
+    .contact-info, .contact-form {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-info h2, .contact-form h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--highlight-color);
+    }
+    .contact-info p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .contact-info p a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color var(--transition-speed);
+    }
+    .contact-info p a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Form Styling */
+    .form-group {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
     }
     .form-label {
       font-size: 18px;
-      color: #000;
+      color: var(--font-color);
+      margin-bottom: 8px;
     }
     .form-control {
-      background-color: rgba(0, 0, 0, 0.1);
-      border: none;
-      color: #000;
-      border-radius: 0;
-      box-shadow: none;
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 2px solid var(--font-color);
+      border-radius: var(--border-radius);
+      background-color: var(--background-color);
+      transition: border var(--transition-speed), box-shadow var(--transition-speed);
     }
     .form-control:focus {
-      background-color: rgba(0, 0, 0, 0.2);
-      color: #000;
-      box-shadow: none;
+      border-color: var(--secondary-color);
+      outline: none;
+      box-shadow: 0 0 8px rgba(255, 167, 38, 0.5);
     }
     .btn-primary {
-      background-color: #EF6C00;
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: var(--primary-color);
+      color: #ffffff;
       border: none;
-      border-radius: 0;
-      padding: 10px 20px;
-      transition: background-color 0.3s ease-in-out;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background-color var(--transition-speed), transform var(--transition-speed);
     }
     .btn-primary:hover {
-      background-color: #FFA726;
+      background-color: var(--secondary-color);
+      transform: translateY(-3px);
     }
-    .navbar-brand, .nav-link {
-      font-size: 18px;
-      letter-spacing: 1px;
-    }
-    .navbar {
-      margin-bottom: 40px;
-    }
-    .nav-link:hover {
-      color: #FFA726;
-    }
-    .form-control::placeholder {
-      color: rgba(0, 0, 0, 0.6);
-    }
+
+    /* Footer Styling */
     footer {
-      background-color: #343a40;
+      background-color: var(--highlight-color);
       color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .footer-link {
+      color: #ffffff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color var(--transition-speed);
+    }
+    .footer-link:hover {
+      color: var(--secondary-color);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .contact-section {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+      .contact-info, .contact-form {
+        padding: 20px 0;
+      }
+      .hero h1 {
+        font-size: 36px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Hitesh Gottapu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="navbar-brand">Hitesh Gottapu</a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="certifications.html" class="nav-link">Certifications</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </nav>
 
-  <div class="container">
-    <section class="contact-section">
-      <b><h2 class="section-title text-center mb-5">Contact Me</h2></b>
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <form action="mailto:hiteshgottapu@gmail.com" method="post" enctype="text/plain">
-            <div class="mb-4">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
-            </div>
-            <div class="mb-4">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" required placeholder="Your Email">
-            </div>
-            <div class="mb-4">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Your Message"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send</button>
-          </form>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Get in Touch</h1>
+    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Let's connect!</p>
+    <a href="#contact" class="btn">Contact Me</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p>Email: <a href="mailto:hiteshgottapu@gmail.com">hiteshgottapu@gmail.com</a></p>
+      <p>Phone: +91 8143506309</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/hitesh-data-analyst" target="_blank">linkedin.com/in/hitesh-data-analyst</a></p>
+      <p>GitHub: <a href="https://github.com/hiteshgottapu" target="_blank">github.com/hiteshgottapu</a></p>
+    </div>
+    <div class="contact-form">
+      <h2>Contact Me</h2>
+      <form action="mailto:hiteshgottapu@gmail.com" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
         </div>
-      </div>
-    </section>
-  </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required placeholder="Your Email">
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send</button>
+      </form>
+    </div>
+  </section>
 
-  
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Hitesh Gottapu. All Rights Reserved.</p>
+    <p>
+      <a href="https://linkedin.com/in/hitesh-data-analyst" class="footer-link">LinkedIn</a> |
+      <a href="https://github.com/hiteshgottapu" class="footer-link">GitHub</a> |
+      <a href="mailto:hiteshgottapu@gmail.com" class="footer-link">Email</a>
+    </p>
+  </footer>
 </body>
 </html>
