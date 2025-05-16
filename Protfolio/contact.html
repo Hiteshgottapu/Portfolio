@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Hitesh Gottapu.">
+  <meta name="keywords" content="data analysis, session analytics, contact">
+  <meta name="author" content="Hitesh Gottapu">
+  <title>Contact Hitesh Gottapu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">Hitesh Gottapu</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="certifications.html" class="nav-link">Certifications</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Get in Touch</h1>
+      <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p>
+        <i class="fas fa-envelope contact-icon"></i>
+        <span>Email:</span>
+        <a href="mailto:hiteshgottapu@gmail.com">hiteshgottapu@gmail.com</a>
+      </p>
+      <p>
+        <i class="fab fa-whatsapp contact-icon"></i>
+        <span>WhatsApp:</span>
+        <a href="https://wa.me/918143506309" target="_blank">+91 8143506309</a>
+      </p>
+      <p>
+        <i class="fab fa-linkedin contact-icon"></i>
+        <span>LinkedIn:</span>
+        <a href="https://linkedin.com/in/hitesh-data-analyst" target="_blank">linkedin.com/in/hitesh-data-analyst</a>
+      </p>
+      <p>
+        <i class="fab fa-github contact-icon"></i>
+        <span>GitHub:</span>
+        <a href="https://github.com/hiteshgottapu" target="_blank">github.com/hiteshgottapu</a>
+      </p>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form action="mailto:hiteshgottapu@gmail.com" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" id="name" name="name" class="form-control" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" name="email" class="form-control" required placeholder="Your Email">
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" name="message" class="form-control" required placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Hitesh Gottapu. All Rights Reserved.</p>
+    <p>
+      <a href="https://linkedin.com/in/hitesh-data-analyst" class="footer-link">LinkedIn</a> |
+      <a href="https://github.com/hiteshgottapu" class="footer-link">GitHub</a> |
+      <a href="mailto:hiteshgottapu@gmail.com" class="footer-link">Email</a> |
+      <a href="index.html" class="footer-link">Home</a> |
+      <a href="projects.html" class="footer-link">Projects</a> |
+      <a href="certifications.html" class="footer-link">Certifications</a>
+    </p>
+  </footer>
+
+  <button id="backToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    // Back to Top Button
+    let backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    }
+
+    backToTopBtn.addEventListener("click", function() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+  </script>
+</body>
+</html>

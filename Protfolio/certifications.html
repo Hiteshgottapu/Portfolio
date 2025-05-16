@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Certifications and Badges obtained by Hitesh Gottapu.">
+  <meta name="keywords" content="data analysis, session analytics, certifications, badges">
+  <meta name="author" content="Hitesh Gottapu">
+  <title>Certifications and Badges by Hitesh Gottapu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">Hitesh Gottapu</a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="certifications.html" class="nav-link">Certifications</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Certifications & Badges</h1>
+      <p>A showcase of my professional achievements and technical expertise</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="certifications-section">
+      <h2 class="section-title">Certifications</h2>
+      <div class="row">
+        <!-- Certification cards will be inserted here by JavaScript -->
+      </div>
+    </section>
+
+    <section class="badges-section">
+      <h2 class="section-title">Badges</h2>
+      <div class="row">
+        <!-- Badge cards will be inserted here by JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <div id="certificateModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h3 class="card-title">Certificate Title</h3>
+      <img src="" alt="Certificate Image">
+      <p></p>
+      <a href="#" class="btn" id="modalViewButton" target="_blank">View Certificate</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Hitesh Gottapu. All Rights Reserved.</p>
+    <p>
+      <a href="https://linkedin.com/in/hitesh-data-analyst" class="footer-link">LinkedIn</a> |
+      <a href="https://github.com/hiteshgottapu" class="footer-link">GitHub</a> |
+      <a href="mailto:hiteshgottapu@gmail.com" class="footer-link">Email</a> |
+      <a href="index.html" class="footer-link">Home</a> |
+      <a href="projects.html" class="footer-link">Projects</a> |
+      <a href="contact.html" class="footer-link">Contact</a>
+    </p>
+  </footer>
+
+  <script>
+    // Your existing JavaScript for certifications and badges
+    const certifications = [
+      {
+        title: "Data Analytics and Visualization Job Simulation",
+        img: "certificate1.png",
+        link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture%20North%20America/hzmoNKtzvAzXsEqx8_Accenture%20North%20America_7vX6Px4HnMxrf2tnu_1714907075517_completion_certificate.pdf",
+        description: "An intensive job simulation that covered data analysis and visualization tasks using various tools and methodologies."
+      },
+      {
+        title: "Analyzing and Visualizing Data with Power BI",
+        img: "certificate2.png",
+        link: "https://courses.edx.org/certificates/fe65f867c5654d3d8959be8861c4c9bc",
+        description: "This certification focuses on creating powerful data visualizations and dashboards using Power BI to derive business insights."
+      },
+      {
+        title: "Python Bootstrap",
+        img: "certificate3.png",
+        link: "https://udemy-certificate.s3.amazonaws.com/image/UC-bafcbd9c-bf6d-4eb2-a78a-92dd3298d41f.jpg?v=1679466952000",
+        description: "A comprehensive course on Python covering everything from basics to advanced concepts and building practical projects."
+      },
+      {
+        title: "Machine Learning with Python",
+        img: "certificate4.png",
+        link: "https://trainings.internshala.com/view_certificate/2lkdb3dfpnz/ijvb8cu86tv/",
+        description: "An in-depth training on machine learning algorithms and applications using Python programming language."
+      },
+      {
+        title: "MS-Excel",
+        img: "certificate5.png",
+        link: "https://trainings.internshala.com/view_certificate/7oyhulm6qt3/baputm8muul/",
+        description: "Advanced proficiency in Microsoft Excel, focusing on data analysis, reporting, and automation using formulas and VBA."
+      },
+      {
+        title: "SQL",
+        img: "certificate6.png",
+        link: "https://trainings.internshala.com/view_certificate/izk82pbys5b/it0p2sxtw2u/",
+        description: "Mastered SQL queries and database management with a focus on data manipulation and analysis for business intelligence."
+      },
+      {
+        title: "Tableau",
+        img: "certificate7.png",
+        link: "https://trainings.internshala.com/s/v/3215596/58a96835",
+        description: "Skilled in creating interactive dashboards and visualizations in Tableau to communicate data insights effectively."
+      },
+      {
+        title: "AVISKHAR Student Expo 2024",
+        img: "avishkar.png",
+        link: "https://drive.google.com/file/d/1NeNgseGhK8RRIKR0KI-A_CcTdFPE9ahs/view?usp=sharing",
+        description: "Presented a research project at the AVISKHAR Student Expo, showcasing innovative data science applications."
+      }
+    ];
+
+    const badges = [
+      {
+        title: "Data Analysis Essentials",
+        img: "data-analytics-essentials (1).png",
+        link: "https://www.credly.com/badges/c15b41cf-9841-422c-8b12-47a58b7d0946/public_url",
+        description: "Essential skills in data analysis including data cleaning, visualization, and interpretation."
+      },
+      {
+        title: "Data Analysis Using Python",
+        img: "data-analysis-using-python.png",
+        link: "https://www.credly.com/badges/e4ffef3f-494f-4754-93ee-cb3fefb7c966/public_url",
+        description: "Proficiency in data analysis using Python libraries such as pandas, NumPy, and Matplotlib."
+      },
+      {
+        title: "Python Hacker Ranker",
+        img: "python.png",
+        link: "https://www.hackerrank.com/hiteshgottapu?badge=sql&stars=5&level=3&utm_campaign=social-buttons&utm_medium=twitter&utm_source=badge_share_profile&social=linkedin",
+        description: "High-level problem-solving skills using Python, validated through rigorous coding challenges."
+      },
+      {
+        title: "SQL Hacker Ranker",
+        img: "SQL-BADGE.png",
+        link: "https://www.hackerrank.com/hiteshgottapu?badge=sql&stars=5&level=3&utm_campaign=social-buttons&utm_medium=twitter&utm_source=badge_share_profile&social=linkedin",
+        description: "Advanced SQL skills validated by achieving top scores in complex SQL challenges."
+      }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Insert Certification Cards
+      const certContainer = document.querySelector('.certifications-section .row');
+      certifications.forEach(cert => {
+        const certCard = document.createElement('div');
+        certCard.className = 'card';
+        certCard.innerHTML = `
+          <img src="${cert.img}" alt="${cert.title}">
+          <div class="card-body">
+            <h3 class="card-title">${cert.title}</h3>
+            <button class="btn" data-title="${cert.title}" data-description="${cert.description}" data-img="${cert.img}" data-link="${cert.link}" data-type="certificate">View Details</button>
+          </div>
+        `;
+        certContainer.appendChild(certCard);
+      });
+      
+      // Insert Badge Cards
+      const badgeContainer = document.querySelector('.badges-section .row');
+      badges.forEach(badge => {
+        const badgeCard = document.createElement('div');
+        badgeCard.className = 'card';
+        badgeCard.innerHTML = `
+          <img src="${badge.img}" alt="${badge.title}">
+          <div class="card-body">
+            <h3 class="card-title">${badge.title}</h3>
+            <button class="btn" data-title="${badge.title}" data-description="${badge.description}" data-img="${badge.img}" data-link="${badge.link}" data-type="badge">View Details</button>
+          </div>
+        `;
+        badgeContainer.appendChild(badgeCard);
+      });
+
+      // Modal Functionality
+      const modal = document.getElementById('certificateModal');
+      const modalTitle = modal.querySelector('h3');
+      const modalImg = modal.querySelector('img');
+      const modalDesc = modal.querySelector('p');
+      const modalLinkButton = document.getElementById('modalViewButton'); // Changed to get the button by ID
+
+      document.querySelectorAll('.card .btn').forEach(btn => { // Ensure we only select buttons within cards
+        btn.addEventListener('click', () => {
+          modalTitle.textContent = btn.dataset.title;
+          modalImg.src = btn.dataset.img;
+          modalImg.alt = btn.dataset.title; // Set alt text for modal image
+          modalDesc.textContent = btn.dataset.description;
+          modalLinkButton.href = btn.dataset.link;
+          
+          if (btn.dataset.type === 'badge') {
+            modalLinkButton.textContent = 'View Badge';
+          } else {
+            modalLinkButton.textContent = 'View Certificate';
+          }
+          
+          modal.style.display = 'flex';
+        });
+      });
+
+      modal.querySelector('.modal-close').addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
